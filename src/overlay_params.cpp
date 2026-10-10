@@ -24,6 +24,7 @@
 #include <vulkan/vulkan_core.h>
 
 #include "overlay_params.h"
+#include "stats_export.h"
 #include "overlay.h"
 #include "config.h"
 #include "string_utils.h"
@@ -585,6 +586,7 @@ parse_ftrace(const char *str) {
 #define parse_log_duration(s) parse_unsigned(s)
 #define parse_time_format(s) parse_str(s)
 #define parse_output_folder(s) parse_path(s)
+#define parse_export_file(s) parse_path(s)
 #define parse_output_file(s) parse_path(s)
 #define parse_font_file(s) parse_path(s)
 #define parse_font_file_text(s) parse_path(s)
@@ -1175,6 +1177,7 @@ parse_overlay_config(struct overlay_params *params,
       logger->stop_logging();
    }
    logger = std::make_unique<Logger>(params);
+   start_stats_export(*params);
 #ifdef MANGOAPP
    {
       extern bool new_frame;

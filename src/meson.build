@@ -48,6 +48,7 @@ vklayer_files = files(
   'keybinds.cpp',
   'font_unispace.c',
   'logging.cpp',
+  'stats_export.cpp',
   'config.cpp',
   'gpu.cpp',
   'blacklist.cpp',

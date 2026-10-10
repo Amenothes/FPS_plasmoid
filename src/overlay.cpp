@@ -312,7 +312,7 @@ void update_hud_info_with_frametime(struct swapchain_stats& sw_stats, const stru
 void update_hud_info(struct swapchain_stats& sw_stats, const struct overlay_params& params, uint32_t vendorID){
    uint64_t now = os_time_get_nano(); /* ns */
    uint64_t frametime_ns = now - sw_stats.last_present_time;
-   if (!get_params()->no_display || logger->is_active())
+   if (!get_params()->no_display || logger->is_active() || !get_params()->export_file.empty())
       update_hud_info_with_frametime(sw_stats, params, vendorID, frametime_ns);
 }
 

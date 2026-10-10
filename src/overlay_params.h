@@ -137,6 +137,7 @@ struct Tracepoint;
    OVERLAY_PARAM_BOOL(dx_api)                        \
    OVERLAY_PARAM_CUSTOM(fps_sampling_period)         \
    OVERLAY_PARAM_CUSTOM(output_folder)               \
+   OVERLAY_PARAM_CUSTOM(export_file)                 \
    OVERLAY_PARAM_CUSTOM(output_file)                 \
    OVERLAY_PARAM_CUSTOM(font_file)                   \
    OVERLAY_PARAM_CUSTOM(font_file_text)              \
@@ -337,6 +338,7 @@ struct overlay_params {
    std::vector<KeySym> toggle_hud_position;
    std::vector<KeySym> reset_fps_metrics;
    std::string time_format, output_folder, output_file;
+   std::string export_file;
    std::string pci_dev;
    std::string media_player_name;
    std::string cpu_text, fps_text;
