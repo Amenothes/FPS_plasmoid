@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, time, json
 
-STATS = "/home/ameno/.cache/mangohud-stats"
+STATS = os.path.expanduser("~/.cache/mangohud-stats")
 STALE = 2.0
 
 META = {
